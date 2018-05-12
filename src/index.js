@@ -3,8 +3,6 @@ import { AppRegistry, View, StyleSheet } from "react-native-web";
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import gql from "graphql-tag";
-
 import ExchangeRateView from "./view";
 import { colors } from "./styles";
 

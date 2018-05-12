@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity, Button } from "react-native-web";
-import Autosuggest from 'react-autosuggest';
+import { View, Text, StyleSheet, ActivityIndicator, Button } from "react-native-web";
+import * as Autosuggest from 'react-autosuggest';
 import { colors, fontSize } from "./styles";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
@@ -30,7 +30,7 @@ const renderSuggestion = suggestion => (
   </div>
 );
 
-class Example extends React.Component {
+class Example extends Component {
   constructor({ input }) {
     super();
 
@@ -86,7 +86,7 @@ class Example extends React.Component {
           inputProps={inputProps}
         />
         <Button style={{'width': '30%'}} onPress={this.onPress} title="Let's go"></Button>
-        {this.state.changed == 1 && <TradeView symbol={this.state.value} />}
+        {this.state.changed === 1 && <TradeView symbol={this.state.value} />}
       </View>
     );
   }
@@ -154,7 +154,7 @@ const TradeView = ({ symbol }) => (
     }}
   </Query>
 );
-export default ExchangeRateView;
+
 const styles = StyleSheet.create({
   container: {
     marginTop: '10px',
@@ -173,3 +173,4 @@ const styles = StyleSheet.create({
     color: 'white',
   }
 });
+export default ExchangeRateView;
